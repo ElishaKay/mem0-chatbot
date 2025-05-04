@@ -5,35 +5,35 @@ A comprehensive mental health support chatbot built with CrewAI, Streamlit, and 
 ## Implementation Instructions:
 
 1. Create a .env file in the project root
-2. Add their OpenAI API key, model and Mem0 key to .env file:
-    .env file
-    OPENAI_API_KEY=sk-...        For CrewAI's LLM operations
-    MEM0_API_KEY=...             If using Mem0 cloud service (optional if using local)
-    MODEL=
-3. Knowledge PDFs to knowledge folder with names:
-    first_resource.pdf
-    second_resource.pdf
-    third_resource.pdf
-    or update following code snippet in crew.py file: 
-    'pdf_source = PDFKnowledgeSource(
-        file_paths=["first_resource.pdf", "second_resource.pdf", "third_resource.pdf"], 
-        name="mental health knowledge base",
-        description="Authorized mental health resource containing approved information"
+2. Add their OpenAI API key, model and Mem0 key to .env file:\\
+    .env file\\
+    OPENAI_API_KEY=sk-...        For CrewAI's LLM operations\\
+    MEM0_API_KEY=...             If using Mem0 cloud service (optional if using local)\\
+    MODEL=\\
+3. Knowledge PDFs to knowledge folder with names:\\
+    first_resource.pdf\\
+    second_resource.pdf\\
+    third_resource.pdf\\
+    or update following code snippet in crew.py file: \\
+    'pdf_source = PDFKnowledgeSource(\\
+        file_paths=["first_resource.pdf", "second_resource.pdf", "third_resource.pdf"], \\
+        name="mental health knowledge base",\\
+        description="Authorized mental health resource containing approved information"\\
     )'
 4. Directory Structure Setup
-    mkdir -p src/crewai_knowledge_chatbot
-    mkdir config
-    mkdir pages
-    touch src/__init__.py
-    touch src/crewai_knowledge_chatbot/__init__.py
-5. Configuration files
+    mkdir -p src/crewai_knowledge_chatbot\\
+    mkdir config\\
+    mkdir pages\\
+    touch src/__init__.py\\
+    touch src/crewai_knowledge_chatbot/__init__.py\\
+5. Configuration files\\
     src/crewai_knowledge_chatbot/__init__.py
-6. To run the application, import
-    - pip install crewai
-    - pip install 'crewai[tools]'
-    - pip install streamlit
-    - pip install streamlit-audiorecorder SpeechRecognition gtts pydub
-    Then run 'streamlit run app.py' on terminal without the quotes.
+6. To run the application, import\\
+    - pip install crewai\\
+    - pip install 'crewai[tools]'\\
+    - pip install streamlit\\
+    - pip install streamlit-audiorecorder SpeechRecognition gtts pydub\\
+    Then run 'streamlit run app.py' on terminal without the quotes.\\
 
 
 
