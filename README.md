@@ -6,9 +6,9 @@ A comprehensive mental health support chatbot built with CrewAI, Streamlit, and 
 
 1. Create a .env file in the project root
 2. Add their OpenAI API key, model and Mem0 key to .env file:
-    # .env file
-    OPENAI_API_KEY=sk-...        # For CrewAI's LLM operations
-    MEM0_API_KEY=...             # If using Mem0 cloud service (optional if using local)
+    .env file
+    OPENAI_API_KEY=sk-...        For CrewAI's LLM operations
+    MEM0_API_KEY=...             If using Mem0 cloud service (optional if using local)
     MODEL=
 3. Knowledge PDFs to knowledge folder with names:
     first_resource.pdf
