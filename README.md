@@ -82,10 +82,6 @@ pip install -r requirements.txt
 ```bash
 # Create .env file with required keys
 cp .env.example .env
-
-OPENAI_API_KEY=sk-...        For CrewAI's LLM operations
-MEM0_API_KEY=...             If using Mem0 cloud service (optional if using local)
-MODEL=
 ```
 
 3.B. Add their OpenAI API key, model and Mem0 key to .env file
