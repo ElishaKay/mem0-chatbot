@@ -78,7 +78,7 @@ cd mental-health-chatbot
 pip install -r requirements.txt
 ```
 
-3. Set up environment variables (Add their OpenAI API key, model and Mem0 key to .env file):
+3.A. Set up environment variables
 ```bash
 # Create .env file with required keys
 cp .env.example .env
@@ -87,6 +87,14 @@ OPENAI_API_KEY=sk-...        For CrewAI's LLM operations
 MEM0_API_KEY=...             If using Mem0 cloud service (optional if using local)
 MODEL=
 ```
+
+3.B. Add their OpenAI API key, model and Mem0 key to .env file
+```bash
+OPENAI_API_KEY=sk-...        For CrewAI's LLM operations
+MEM0_API_KEY=...             If using Mem0 cloud service (optional if using local)
+MODEL=
+```
+
 
 4. Add your mental health resource PDFs to the project directory:
    - `first_resource.pdf`
