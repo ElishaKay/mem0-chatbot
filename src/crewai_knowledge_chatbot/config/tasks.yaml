@@ -1,0 +1,88 @@
+therapy_question_task:
+  description: >
+    Generate a thoughtful therapy question based on the user's context and conversation history.
+    
+    User context: {user_context}
+    Conversation history: {conversation_history}
+    Question number: {question_number}
+    
+    Your task:
+    1. Review the user's profile and any previous responses
+    2. Generate ONE thoughtful, empathetic question that:
+       - Explores deeper into their concerns
+       - Is relevant to their stated issues
+       - Avoids causing additional distress
+       - Helps understand their situation better
+    3. The question should be open-ended but focused
+    4. Maintain a professional, caring tone
+    5. If this is question 7, make it a closing question that wraps up the session
+    
+    Return ONLY the question itself, no additional text or formatting.
+    
+  expected_output: >
+    A single, well-crafted therapy question that builds on the conversation and helps understand the user's situation better.
+  agent: therapist
+
+knowledge_search_task:
+  description: >
+    Search the authorized knowledge base for relevant mental health information based on the user's full context.
+    
+    User message: {user_message}
+    Full context (including user profile and therapy session): {full_context}
+    
+    Your task:
+    1. Analyze the user's current question in the context of their profile and therapy session
+    2. Search thoroughly through the knowledge base for:
+       - Information addressing their specific concerns
+       - Relevant coping strategies and techniques
+       - Self-help resources
+       - Professional guidance recommendations
+    3. Find information that matches their symptoms and situation
+    4. Focus on practical, actionable advice from the knowledge base
+    5. Compile all relevant information found
+    
+  expected_output: >
+    A comprehensive compilation of:
+    - All relevant information found in the knowledge base
+    - Specific coping strategies and resources
+    - Clear indication of what information is available
+    - Organized findings for summarization
+  agent: knowledge_specialist
+
+summary_task:
+  description: >
+    Create a BRIEF, personalized response (5-6 sentences MAXIMUM) based on the user's preferred communication style.
+    
+    User message: {user_message}
+    Full context: {full_context}
+    
+    CRITICAL: Extract the user's preferred_style from the full_context and adapt your response accordingly:
+    
+    If preferred_style is "Supportive and empathetic":
+    - Use warm, validating language
+    - Express understanding and compassion
+    - Offer gentle suggestions
+    
+    If preferred_style is "Direct and solution-focused":
+    - Be straightforward and practical
+    - Focus on actionable steps
+    - Minimize emotional language
+    
+    If preferred_style is "Educational and informative":
+    - Provide factual information
+    - Explain concepts clearly
+    - Use educational tone
+    
+    STRICT REQUIREMENTS:
+    1. Response MUST be 5-6 sentences maximum
+    2. First sentence: Acknowledge their specific question
+    3. Middle sentences (2-3): Provide key information or strategies from knowledge base
+    4. Final sentence: End with one practical suggestion or encouraging statement
+    5. Match the tone to their preferred_style exactly
+    6. Be concise but helpful
+    
+  expected_output: >
+    A response that is EXACTLY 5-6 sentences long, matching the user's preferred communication style, addressing their specific question with practical advice from the knowledge base.
+  agent: summarizer
+  context:
+    - knowledge_search_task

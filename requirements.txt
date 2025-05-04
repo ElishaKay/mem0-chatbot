@@ -1,0 +1,11 @@
+streamlit
+crewai
+crewai-tools
+mem0ai
+python-dotenv
+gTTS
+SpeechRecognition
+audiorecorder
+pydub  # Required for audio processing
+pyaudio  # Required for microphone input
+pandas
